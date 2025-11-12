@@ -1,0 +1,25 @@
+estoque/
+├── public/
+│   ├── index.php
+│   ├── nova_caixa.php
+│   ├── salvar_caixa.php
+│   ├── alocar.php
+│   ├── salvar_alocacao.php
+│   ├── gerir_coluna.php
+│   ├── remover_ocupacao.php
+│   ├── mover_ocupacao.php
+│   ├── buscar_posicao.php
+│   ├── assets/
+│   │   ├── css/
+│   │   │   └── styles.css
+│   │   ├── img/
+│   │   │   └── README.md
+│   │   └── js/
+│   │       └── README.md
+│   └── .htaccess  (opcional, para apontar DocumentRoot)
+├── src/
+│   └── db.php
+├── database/
+│   └── schema.sql
+├── README.md
+└── .gitignore

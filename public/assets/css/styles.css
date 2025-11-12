@@ -1,0 +1,96 @@
+:root {
+  --cell: 72px;
+  --gap: 10px;
+  --slot-h: 22px;
+}
+
+* { box-sizing: border-box; }
+body { font-family: system-ui, Arial, sans-serif; margin: 0; padding: 16px; background: #f7f8fb; color: #0f172a; }
+
+.header { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+.badge { background:#eef2ff; padding:2px 8px; border-radius:10px; color:#1e40af; }
+
+.controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+select, input, button { padding: 8px 10px; border-radius: 6px; border: 1px solid #c7cfdb; }
+button.primary { background: #2563eb; color: #fff; border: none; cursor: pointer; }
+button.primary:hover { background: #1e4fd1; }
+
+.viewport {
+  height: 70vh;
+  overflow: auto;
+  border: 1px solid #d9dee8;
+  border-radius: 10px;
+  background: #eef2f7;
+  scroll-behavior: smooth;
+}
+
+.scene {
+  transform-origin: 0 0;
+  transition: transform 600ms ease;
+}
+
+.grid-prateleira {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(var(--cell), 1fr));
+  gap: var(--gap);
+  padding: 16px;
+}
+
+.celula {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e3e8f0;
+  border-radius: 8px;
+  min-height: calc(var(--slot-h) * 3 + 20px);
+  padding: 8px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 6px;
+}
+.celula.vazia { background: #fafbff; border-style: dashed; color: #8a94a6; }
+
+.slot {
+  height: var(--slot-h);
+  line-height: var(--slot-h);
+  border-radius: 4px;
+  padding: 0 6px;
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #163;
+  background: #d4f4dd;
+  border: 1px solid #9fd8a6;
+}
+.slot[data-slot="2"] { background: #e8f6ff; border-color: #b9e0ff; color: #135; }
+.slot[data-slot="3"] { background: #fff0da; border-color: #ffd7a1; color: #653; }
+
+.celula .foot {
+  margin-top: auto; font-size: 11px; color: #9aa3b2; display: flex; align-items: center; justify-content: space-between;
+}
+
+.actions { display: flex; gap: 6px; margin-top: 6px; }
+.actions button { padding: 6px 8px; }
+
+.celula.destino {
+  outline: 3px solid #ff7a00;
+  box-shadow: 0 0 0 6px rgba(255,122,0,.18) inset;
+  animation: pulse 1.2s ease-in-out 2;
+}
+@keyframes pulse {
+  0% { outline-color: #ff7a00; }
+  50% { outline-color: #ffd0a8; }
+  100% { outline-color: #ff7a00; }
+}
+
+.label-pos {
+  position: absolute;
+  z-index: 5;
+  background: rgba(0,0,0,.75);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font: 600 14px/1.2 system-ui, Arial, sans-serif;
+  transform: translate(-50%, -140%);
+  pointer-events: none;
+}
