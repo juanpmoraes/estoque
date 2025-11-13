@@ -57,7 +57,7 @@ estoque/
 
 1. Clone o projeto:
     ```
-    git clone https://github.com/SEU-USUARIO/estoque-anima.git
+    git clone https://github.com/juanpmoraes/estoque.git
     ```
 
 2. Importe `database/schema.sql` no seu MySQL (pode usar phpMyAdmin, DBeaver, etc).
