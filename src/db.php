@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost';
+$host = 'squarre-cloud-db-45ee9918389d44b3937fdb8e41f83048.squareweb.app';
 $db   = 'estoque';
-$user = 'root';
-$pass = '';
+$user = 'squarecloud';
+$pass = 'INNbhFE8vqhXzKTHUHLhLFWk';
 $charset = 'utf8mb4';
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [
